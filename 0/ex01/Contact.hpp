@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/24 13:06:54 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/09/18 14:19:17 by mmoussou         ###   ########.fr       */
+/*   Created: 2024/09/18 10:08:02 by mmoussou          #+#    #+#             */
+/*   Updated: 2024/09/18 11:54:23 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-# include "Contact.hpp"
+# include <string>
+# include <iostream>
 
-class PhoneBook {
+class Contact {
+
 public:
-	PhoneBook(void);
-	~PhoneBook(void);
+	Contact(void);
 
-	void	Add(void);
-	void	Search(void);
+	~Contact(void);
+
+	void SetInfo(
+		std::string firstname,
+		std::string lastname,
+		std::string nickname,
+		std::string phone,
+		std::string secret
+	);
+	std::string	*GetInfo(void);
 
 private:
-	int		index_list_contact;
-	int		size_list_index;
-	Contact	list_contact[8];
-
-	std::string	TakeInput(std::string what);
-	std::string	Format(std::string str);
-
+	std::string	info[5];
 };
 
 #endif
-

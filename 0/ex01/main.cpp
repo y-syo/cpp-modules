@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/24 13:06:54 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/09/18 14:19:17 by mmoussou         ###   ########.fr       */
+/*   Created: 2024/09/18 10:03:20 by mmoussou          #+#    #+#             */
+/*   Updated: 2024/09/18 11:48:34 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "PhoneBook.hpp"
 
-# include "Contact.hpp"
-
-class PhoneBook {
-public:
-	PhoneBook(void);
-	~PhoneBook(void);
-
-	void	Add(void);
-	void	Search(void);
-
-private:
-	int		index_list_contact;
-	int		size_list_index;
-	Contact	list_contact[8];
-
-	std::string	TakeInput(std::string what);
-	std::string	Format(std::string str);
-
-};
-
-#endif
-
+int	main(void)
+{
+	PhoneBook phonebook;
+	//Contact contact1("John", "Shakoh", "caca", "192.18.0.24", "kakoh");
+}

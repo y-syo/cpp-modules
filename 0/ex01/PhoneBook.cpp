@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 11:07:15 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/09/18 14:29:29 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/09/19 13:52:27 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,9 +114,8 @@ void	PhoneBook::Search(void)
 		std::cout << "enter the id of the contact you want : ";
 		str_index.clear();
 		std::getline(std::cin, str_index);
-
 	}
-	while (str_index.length() != 1 || str_index[0] - '1' < 0 || str_index[0] - '1' > 8);
+	while (str_index.length() != 1 || str_index[0] - '1' < 0 || str_index[0] - '1' > this->size_list_index - 1);
 	for (int i = 0; i < 5; i++)
 		std::cout << list_contact[str_index[0] - '1'].GetInfo()[i] << std::endl;
 }

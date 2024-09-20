@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 11:07:15 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/09/19 13:52:27 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/09/20 11:47:03 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ PhoneBook::PhoneBook(void)
 	while (1 + 1 - 1 * 1 / 1)
 	{
 		command.clear();
-		std::getline(std::cin, command);
+		if (!std::getline(std::cin, command))
+			return ;
 		if (!command.compare("ADD"))
 			this->Add();
 		else if (!command.compare("SEARCH"))
@@ -43,7 +44,8 @@ std::string	PhoneBook::TakeInput(std::string what)
 	{
 		std::cout << "enter the " << what << " of this contact : ";
 		value.clear();
-		std::getline(std::cin, value);
+		if (!std::getline(std::cin, value))
+			return ("");
 	}
 	while (value.empty());
 	return (value);
@@ -61,10 +63,20 @@ void	PhoneBook::Add(void)
 	if (this->size_list_index < 8)
 		this->size_list_index++;
 	firstname = this->TakeInput("firstname");
+	if (firstname.empty())
+		return ;
 	lastname = this->TakeInput("lastname");
+	if (lastname.empty())
+		return ;
 	nickname = this->TakeInput("nickname");
+	if (nickname.empty())
+		return ;
 	phone = this->TakeInput("phone");
+	if (phone.empty())
+		return ;
 	secret = this->TakeInput("secret");
+	if (secret.empty())
+		return ;
 
 	this->list_contact[index_list_contact].SetInfo(firstname, lastname, nickname, phone, secret);
 	this->index_list_contact = (this->index_list_contact + 1) % 8;
@@ -113,7 +125,8 @@ void	PhoneBook::Search(void)
 	{
 		std::cout << "enter the id of the contact you want : ";
 		str_index.clear();
-		std::getline(std::cin, str_index);
+		if (!std::getline(std::cin, str_index))
+			return ;
 	}
 	while (str_index.length() != 1 || str_index[0] - '1' < 0 || str_index[0] - '1' > this->size_list_index - 1);
 	for (int i = 0; i < 5; i++)

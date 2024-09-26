@@ -6,7 +6,7 @@
 #    By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 07:21:18 by mmoussou          #+#    #+#              #
-#    Updated: 2024/09/18 13:41:57 by mmoussou         ###   ########.fr        #
+#    Updated: 2024/09/26 10:49:27 by mmoussou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,6 @@ INCLUDE = ./include
 NAME = phonebook
 
 #find -type f -name "*.cpp" | sed "s/\.\///g" | xargs -Iname echo "`printf '\t\t\t'`" name "\\"
-#SRCS = 
 SRCS = $(shell find -name '*.cpp')
 
 all: $(NAME)

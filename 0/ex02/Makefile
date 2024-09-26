@@ -6,7 +6,7 @@
 #    By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 07:21:18 by mmoussou          #+#    #+#              #
-#    Updated: 2024/09/19 15:46:41 by mmoussou         ###   ########.fr        #
+#    Updated: 2024/09/22 04:31:51 by mmoussou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SHELL = bash
 
 CC = g++
 
-CFLAGS = -std=c++98 #-Wall -Werror -Wextra
+CFLAGS = -std=c++98 -fpie#-Wall -Werror -Wextra
 
 INCLUDE = ./include
 

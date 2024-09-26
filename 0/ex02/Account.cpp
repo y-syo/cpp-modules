@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 14:32:10 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/09/19 18:08:57 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/09/26 10:47:48 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,84 +15,137 @@
 #include <iostream>
 #include "Account.hpp"
 
+int	Account::_nbAccounts = 0;
+int	Account::_totalAmount = 0;
+int	Account::_totalNbDeposits = 0;
+int	Account::_totalNbWithdrawals = 0;
+
 Account::Account() {}
 
 Account::Account(int initial_deposit)
 {
+	this->_accountIndex = _nbAccounts++;
+	this->_amount = initial_deposit;
+	_totalAmount += initial_deposit;
+	this->_nbDeposits = 0;
+	this->_nbWithdrawals = 0;
+
 	_displayTimestamp();
-	std::cout <<
-		"index:"; << index <<
-		";amount:" << amount <<
-		";created";
+	std::cout
+		<< "index:" << this->_accountIndex
+		<< ";amount:" << this->_amount
+		<< ";created"
+		<< std::endl;
 }
 
 Account::~Account(void)
 {
 	_displayTimestamp();
-	std::cout <<
-		"index:"; << index <<
-		";amount:" << amount <<
-		";closed";
+	std::cout
+		<< "index:" << this->_accountIndex
+		<< ";amount:" << this->_amount
+		<< ";closed"
+		<< std::endl;
 }
 
 
 
-static int	getNbAccounts(void)
+int	Account::getNbAccounts(void)
 {
-	return (0);
+	return (Account::_nbAccounts);
 }
 
-static int	getTotalAmount(void)
+int	Account::getTotalAmount(void)
 {
-	return (0);
+	return (Account::_totalAmount);
 }
 
-static int	getNbDeposits(void)
+int	Account::getNbDeposits(void)
 {
-	return (0);
+	return (_totalNbDeposits);
 }
 
-static int	getNbWithdrawals(void)
+int	Account::getNbWithdrawals(void)
 {
-	return (0);
+	return (_totalNbWithdrawals);
 }
 
-static void	displayAccountsInfos(void)
+void	Account::displayAccountsInfos(void)
 {
+	_displayTimestamp();
+	std::cout
+		<< "accounts:" << getNbAccounts()
+		<< ";total:" << getTotalAmount()
+		<< ";deposits:" << getNbDeposits()
+		<< ";withdrawals:" << getNbWithdrawals()
+		<< std::endl;
 }
 
 
 
-void	makeDeposit(int deposit)
+void	Account::makeDeposit(int deposit)
 {
+	//[19920104_091532] index:3;p_amount:432;deposit:2;amount:434;nb_deposits:1
+	_displayTimestamp();
+	std::cout
+		<< "index:" << this->_accountIndex
+		<< ";p_amount:" << this->_amount
+		<< ";deposit:" << deposit
+		<< ";amount:" << this->_amount + deposit
+		<< ";nb_deposit:" << ++this->_nbDeposits
+		<< std::endl;
+	this->_amount += deposit;
 }
 
-bool	makeWithdrawal(int withdrawal)
+bool	Account::makeWithdrawal(int withdrawal)
 {
+	//[19920104_091532] index:0;p_amount:47;withdrawal:refused
+	//[19920104_091532] index:1;p_amount:819;withdrawal:34;amount:785;nb_withdrawals:1
+	if (withdrawal > this->_amount)
+	{
+		_displayTimestamp();
+		std::cout
+			<< "index:" << this->_accountIndex
+			<< ";p_amount:" << this->_amount
+			<< ";withdrawal:" << "refused"
+			<< std::endl;
+		return (false);
+	}
+	_displayTimestamp();
+	std::cout
+		<< "index:" << this->_accountIndex
+		<< ";p_amount:" << this->_amount
+		<< ";withdrawal:" << withdrawal
+		<< ";amount:" << this->_amount - withdrawal
+		<< ";nb_withdrawals:" << ++this->_nbWithdrawals
+		<< std::endl;
+	this->_amount -= withdrawal;
 	return (true);
 }
 
-int		checkAmount(void)
+int		Account::checkAmount(void) const
 {
 	return (0);
 }
 
-void	displayStatus(void)
+void	Account::displayStatus(void) const
 {
+	//[19920104_091532] index:4;amount:1321;deposits:1;withdrawals:0
+	_displayTimestamp();
+	std::cout
+		<< "index:" << this->_accountIndex
+		<< ";amount:" << this->_amount
+		<< ";deposits:" << this->_nbDeposits
+		<< ";withdrawals:" << this->_nbWithdrawals
+		<< std::endl;
 }
-
 
 
 void	Account::_displayTimestamp(void)
 {
+	char	buffer[80];
 	time_t now = std::time(NULL);
-	struct tm timenow = *std::localtime(&now);
-
-	std::cout << "[" << timenow.tm_year + 1900 <<
-	std::setfill('0') << std::setw(2) << timenow.tm_mon + 1 <<
-	std::setfill('0') << std::setw(2) << timenow.tm_mday << "_" <<
-	std::setfill('0') << std::setw(2) << timenow.tm_hour <<
-	std::setfill('0') << std::setw(2) << timenow.tm_min <<
-	std::setfill('0') << std::setw(2) << timenow.tm_sec <<
-	"] ";
+	struct tm *time = std::localtime(&now);
+	std::strftime(buffer, 80, "%Y%m%d_%H%M%S", time);
+	std::cout << "[" << buffer << "]";
 }

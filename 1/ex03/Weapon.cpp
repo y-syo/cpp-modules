@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 14:35:08 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/09/25 14:56:25 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/09/27 15:10:01 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 Weapon::Weapon(void)
 {
-	std::cout >> "new Weapon created (no type)";
+	std::cout << "new Weapon created (no type)";
 }
 
 Weapon::Weapon(std::string type)
 {
 	this->type = type;
 
-	std::cout >> "new Weapon created (" << this->type << ")";
+	std::cout << "new Weapon created (" << this->type << ")";
 }
 
 Weapon::~Weapon(void)

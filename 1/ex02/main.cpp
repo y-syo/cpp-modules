@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 14:18:06 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/09/25 14:28:46 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/09/27 14:47:54 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,19 @@ int	main(void)
 	std::cout << "ptr memory address : 0x" << &ptr << std::endl;
 	std::cout << "ref memory address : 0x" << &ref << std::endl;
 
+	std::cout << "str value : " << str << std::endl;
+	std::cout << "ptr value : " << *ptr << std::endl;
+	std::cout << "ref value : " << ref << std::endl;
+
+	str = "NO MORE";
+
+	std::cout << "str memory address : 0x" << &str << std::endl;
+	std::cout << "ptr memory address : 0x" << &ptr << std::endl;
+	std::cout << "ref memory address : 0x" << &ref << std::endl;
 
 	std::cout << "str value : " << str << std::endl;
 	std::cout << "ptr value : " << *ptr << std::endl;
 	std::cout << "ref value : " << ref << std::endl;
+
+
 }

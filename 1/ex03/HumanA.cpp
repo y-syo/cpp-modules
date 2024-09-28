@@ -6,20 +6,20 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 14:57:20 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/09/27 15:18:38 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/09/28 17:13:31 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon weapon)
+HumanA::HumanA(std::string name, Weapon &weapon): name(name), weapon(weapon)
 {
-	this->name = name;
-	this->weapon = weapon;
+	std::cout << name << ": HumanA created" << std::endl;
 }
 
 HumanA::~HumanA(void)
 {
+	std::cout << name << ": HumanA destroyed" << std::endl;
 }
 
 void	HumanA::attack(void)

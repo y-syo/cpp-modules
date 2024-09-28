@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 14:40:35 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/09/27 15:58:38 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/09/28 17:10:59 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class HumanA {
 
 public:
-	HumanA(std::string name, Weapon weapon);
+	HumanA(std::string name, Weapon &weapon);
 	~HumanA(void);
 
 	void	attack(void);

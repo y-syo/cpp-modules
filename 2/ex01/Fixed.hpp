@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 09:53:32 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/11/22 09:53:38 by mmoussou         ###   ########.fr       */
+/*   Created: 2024/11/18 00:12:54 by mmoussou          #+#    #+#             */
+/*   Updated: 2024/11/22 09:46:58 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <string>
 #include <iostream>
+#include <cmath>
 
-class Harl {
+class Fixed {
 
 public:
-  Harl(void);
-  ~Harl(void);
+	Fixed();
+	Fixed(const int int_value);
+	Fixed(const float float_value);
+	Fixed(const Fixed &other);
+	~Fixed();
+	Fixed	&operator=(const Fixed &other);
 
-  void complain(std::string level);
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
+
+	int		toInt(void) const;
+	float	toFloat(void) const;
 
 private:
-  void debug(void);
-  void info(void);
-  void warning(void);
-  void error(void);
+	static const int	frac_bits;
+	int					_value;
 
 };
+
+std::ostream	&operator<<(std::ostream &stream, const Fixed &fixed);

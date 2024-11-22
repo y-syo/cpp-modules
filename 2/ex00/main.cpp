@@ -5,20 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 09:54:04 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/11/22 09:54:05 by mmoussou         ###   ########.fr       */
+/*   Created: 2024/11/18 13:23:22 by mmoussou          #+#    #+#             */
+/*   Updated: 2024/11/18 13:59:28 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include <iostream>
+#include "Fixed.hpp"
 
 int main(void)
 {
-  Harl myGoat;
-  myGoat.complain("DEBUG");
-  myGoat.complain("INFO");
-  myGoat.complain("DEBUG");
-  myGoat.complain("WARNING");
-  myGoat.complain("WARNING");
-  myGoat.complain("ERROR");
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
+
+	c = b;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	return 0;
 }

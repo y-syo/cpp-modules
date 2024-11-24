@@ -1,8 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/24 16:18:12 by mmoussou          #+#    #+#             */
+/*   Updated: 2024/11/24 16:42:37 by mmoussou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
-#include <cctype>
+#include <string>
 
 int	main(int argc, char *argv[])
 {
+	std::string	str;
+
 	if (argc < 2)
 	{
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
@@ -10,9 +24,9 @@ int	main(int argc, char *argv[])
 	}
 	for (int ac = 1; ac < argc; ac++)
 	{
-		for (int i = 0; argv[ac][i]; i++)
-			argv[ac][i] = std::toupper(argv[ac][i]);
-	  std::cout << argv[ac];
+		str.assign(argv[ac]);
+		for (std::string::iterator it=str.begin(); it != str.end(); ++it)
+			std::cout << (char)std::toupper(*it);
 	}
 	std::cout << std::endl;
 	return (0);

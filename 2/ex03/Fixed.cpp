@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 12:13:40 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/12/03 16:25:09 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/12/04 14:15:41 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,34 @@ const int	Fixed::frac_bits = 8;
 
 Fixed::Fixed(): _value(0)
 {
-	std::cout << "default constructor called" << std::endl;
+	//std::cout << "default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int int_value)
 {
-	std::cout << "int constructor called" << std::endl;
+	//std::cout << "int constructor called" << std::endl;
 	_value = int_value << frac_bits;
 }
 
 Fixed::Fixed(const float float_value)
 {
-	std::cout << "float constructor called" << std::endl;
+	//std::cout << "float constructor called" << std::endl;
 	_value = roundf(float_value * (1 << frac_bits));
 }
 
 Fixed::Fixed(const Fixed &other) : _value(other.getRawBits())
 {
-	std::cout << "copy constructor called" << std::endl;
+	//std::cout << "copy constructor called" << std::endl;
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "destructor called" << std::endl;
+	//std::cout << "destructor called" << std::endl;
 }
 
 Fixed	&Fixed::operator=(const Fixed &other)
 {
-	std::cout << "copy assignment operator called" << std::endl;
+	//std::cout << "copy assignment operator called" << std::endl;
 
 	if (this != &other)
 		_value = other.getRawBits();
@@ -130,13 +130,13 @@ Fixed	Fixed::operator--(int)
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	//std::cout << "getRawBits member function called" << std::endl;
 	return (_value);
 }
 
 void	Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called" << std::endl;
+	//std::cout << "setRawBits member function called" << std::endl;
 	_value = raw;
 }
 

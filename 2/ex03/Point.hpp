@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 13:23:22 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/12/04 15:23:13 by mmoussou         ###   ########.fr       */
+/*   Created: 2024/12/04 13:36:47 by mmoussou          #+#    #+#             */
+/*   Updated: 2024/12/04 14:10:58 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Fixed.hpp"
-#include "Point.hpp"
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
+class Point {
 
-int main(void)
-{
-	Point	a(0.0f, 2.0f);
-	Point	b(2.0f, 8.0f);
-	Point	c(14.0f, 1.0f);
-	Point	p(5.0f, 6.0f);
+public:
+	Point();
+	Point(const float x, const float y);
+	Point(const Point &other);
+	~Point();
+	Point	&operator=(const Point &other);
 
-	std::cout << (bsp(a, b, c, p) ? "in triangle" : "not in triangle") << std::endl;
+	Fixed	getX(void) const;
+	Fixed	getY(void) const;
 
-	return 0;
-}
+private:
+	Fixed	_x;
+	Fixed	_y;
+
+};

@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 09:54:04 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/11/22 09:54:05 by mmoussou         ###   ########.fr       */
+/*   Updated: 2024/12/06 13:28:16 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ int main(void)
   myGoat.complain("WARNING");
   myGoat.complain("WARNING");
   myGoat.complain("ERROR");
+  myGoat.complain("skibidigyattfortherizzlerwithmaxaura");
 }

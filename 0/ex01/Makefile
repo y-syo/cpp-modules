@@ -6,13 +6,13 @@
 #    By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 07:21:18 by mmoussou          #+#    #+#              #
-#    Updated: 2024/11/24 16:52:51 by mmoussou         ###   ########.fr        #
+#    Updated: 2024/12/18 17:16:23 by mmoussou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SHELL = bash
 
-CC = g++
+CC = c++
 
 CFLAGS = -std=c++98 -Wall -Werror -Wextra
 

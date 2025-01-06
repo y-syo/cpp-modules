@@ -6,13 +6,13 @@
 #    By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 07:21:18 by mmoussou          #+#    #+#              #
-#    Updated: 2024/09/24 17:55:03 by mmoussou         ###   ########.fr        #
+#    Updated: 2025/01/06 14:37:00 by mmoussou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SHELL = bash
 
-CC = g++
+CC = c++
 
 CFLAGS = -std=c++98 -Wall -Werror -Wextra
 
@@ -21,8 +21,11 @@ INCLUDE = ./include
 NAME = ex00
 
 #find -type f -name "*.cpp" | sed "s/\.\///g" | xargs -Iname echo "`printf '\t\t\t'`" name "\\"
-#SRCS = 
-SRCS = $(shell find -name '*.cpp')
+SRCS = 			Zombie.cpp \
+			newZombie.cpp \
+			randomChump.cpp \
+			main.cpp
+#SRCS = $(shell find -name '*.cpp')
 
 all: $(NAME)
 

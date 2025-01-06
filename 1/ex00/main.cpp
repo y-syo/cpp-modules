@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:22:28 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/09/24 19:25:40 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/06 14:27:30 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	main(void)
 {
-	Zombie	*z1 = newZombie("kakoh");
-	Zombie	*z2 = newZombie("caca en personne");
-	randomChump("evilge");
+	Zombie	*z1 = newZombie("foo");
+	Zombie	*z2 = newZombie("lorem ipsum");
+	randomChump("random zombie");
 	z1->announce();
 	delete z1;
 	z2->announce();

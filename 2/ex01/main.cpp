@@ -6,11 +6,10 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:23:22 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/11/22 09:55:22 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/07 16:28:08 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Fixed.hpp"
 
 int main(void)

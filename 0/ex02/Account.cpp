@@ -81,22 +81,21 @@ void	Account::displayAccountsInfos(void)
 
 void	Account::makeDeposit(int deposit)
 {
-	//[19920104_091532] index:3;p_amount:432;deposit:2;amount:434;nb_deposits:1
 	_displayTimestamp();
 	std::cout
 		<< "index:" << this->_accountIndex
 		<< ";p_amount:" << this->_amount
 		<< ";deposit:" << deposit
 		<< ";amount:" << this->_amount + deposit
-		<< ";nb_deposit:" << ++this->_nbDeposits
+		<< ";nb_deposits:" << ++this->_nbDeposits
 		<< std::endl;
 	this->_amount += deposit;
+	Account::_totalAmount += deposit;
+	Account::_totalNbDeposits++;
 }
 
 bool	Account::makeWithdrawal(int withdrawal)
 {
-	//[19920104_091532] index:0;p_amount:47;withdrawal:refused
-	//[19920104_091532] index:1;p_amount:819;withdrawal:34;amount:785;nb_withdrawals:1
 	if (withdrawal > this->_amount)
 	{
 		_displayTimestamp();
@@ -116,6 +115,8 @@ bool	Account::makeWithdrawal(int withdrawal)
 		<< ";nb_withdrawals:" << ++this->_nbWithdrawals
 		<< std::endl;
 	this->_amount -= withdrawal;
+	Account::_totalAmount -= withdrawal;
+	Account::_totalNbWithdrawals++;
 	return (true);
 }
 
@@ -126,7 +127,6 @@ int		Account::checkAmount(void) const
 
 void	Account::displayStatus(void) const
 {
-	//[19920104_091532] index:4;amount:1321;deposits:1;withdrawals:0
 	_displayTimestamp();
 	std::cout
 		<< "index:" << this->_accountIndex
@@ -143,5 +143,6 @@ void	Account::_displayTimestamp(void)
 	time_t now = std::time(NULL);
 	struct tm *time = std::localtime(&now);
 	std::strftime(buffer, 80, "%Y%m%d_%H%M%S", time);
-	std::cout << "[" << buffer << "]";
+	//std::string	buffer = "19920104_091532";
+	std::cout << "[" << buffer << "] ";
 }

@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 11:07:15 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/09/26 10:49:47 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/07 15:55:34 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ std::string PhoneBook::Format(std::string str)
 	else
 	{
 		for (; str.length() != 10;)
-			str.append(" ");
+			str.insert(0, " ");
 		return (str);
 	}
 	return (str);

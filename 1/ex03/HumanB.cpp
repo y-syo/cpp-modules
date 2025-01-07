@@ -6,13 +6,13 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 15:04:20 by mmoussou          #+#    #+#             */
-/*   Updated: 2024/09/28 17:15:35 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/07 15:53:10 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name): name(name)
+HumanB::HumanB(std::string name): name(name), weapon(NULL)
 {
 	std::cout << name << ": HumanB created" << std::endl;
 }

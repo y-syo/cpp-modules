@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 13:36:47 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/07 16:45:07 by mmoussou         ###   ########.fr       */
+/*   Created: 2025/01/07 16:42:47 by mmoussou          #+#    #+#             */
+/*   Updated: 2025/01/08 13:53:00 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Fixed.hpp"
+#include <iostream>
+#include <cstdlib>
+#include <string>
+#include <ctime>
 
-class Point {
+class ClapTrap {
 
 public:
-	Point();
-	Point(const float x, const float y);
-	Point(const Point &other);
-	~Point();
-	Point	&operator=(const Point &other);
+	ClapTrap(void);
+	ClapTrap(std::string name);
+	ClapTrap(const ClapTrap &other);
+	~ClapTrap(void);
+	ClapTrap	&operator=(const ClapTrap &other);
 
-	Fixed	getX(void) const;
-	Fixed	getY(void) const;
+	void	attack(const std::string &target);
+	void	takeDamage(unsigned int amount);
+	void	beRepaired(unsigned int amount);
 
 private:
-	Fixed	_x;
-	Fixed	_y;
+	std::string	_name;
+	int			_hit_points;
+	int			_energy_points;
+	int			_attack_points;
 
 };

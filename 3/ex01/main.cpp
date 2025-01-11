@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 13:36:47 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/07 16:45:07 by mmoussou         ###   ########.fr       */
+/*   Created: 2025/01/08 13:36:54 by mmoussou          #+#    #+#             */
+/*   Updated: 2025/01/09 17:12:17 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "ClapTrap.hpp"
 
-#include "Fixed.hpp"
+int main()
+{
+	ClapTrap a;
+	ClapTrap b("Cody");
 
-class Point {
-
-public:
-	Point();
-	Point(const float x, const float y);
-	Point(const Point &other);
-	~Point();
-	Point	&operator=(const Point &other);
-
-	Fixed	getX(void) const;
-	Fixed	getY(void) const;
-
-private:
-	Fixed	_x;
-	Fixed	_y;
-
-};
+	a.attack("some other robot");
+	a.takeDamage(10);
+	a.takeDamage(10);
+	a.beRepaired(5);
+	a.attack("some other other robot");
+	b.beRepaired(3);
+	for (int i = 0; i < 12; i++)
+		b.attack("Cody-clone");
+	b.beRepaired(3);
+	return (0);
+}

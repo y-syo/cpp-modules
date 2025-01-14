@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 16:55:50 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/09 16:59:22 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/14 05:28:31 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	set_seed(void)
 	static bool is_set = false;
 	if (!is_set)
 	{
-		std::srand(std::time(0));
+	std::srand(std::time(0));
 		is_set = true;
 	}
 }
@@ -69,9 +69,15 @@ ClapTrap	&ClapTrap::operator=(const ClapTrap &other)
 
 void	ClapTrap::attack(const std::string &target)
 {
+	if (!_hit_points)
+	{
+		std::cout << DIM << this->_name << " is dead, can't attack." << RESET << std::endl;
+		return ;
+	}
+
 	if (!_energy_points)
 	{
-		std::cout << DIM << this->_name << " don't have any energy left." << RESET << std::endl;
+		std::cout << DIM << this->_name << " don't have any energy left to attack." << RESET << std::endl;
 		return ;
 	}
 
@@ -93,7 +99,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 	std::cout << DIM << this->_name << " took " << amount << " damages" << RESET << std::endl;
 	std::cout << YELLOW << this->_name << ": " << hit_sentence[std::rand() % 5] << RESET << std::endl;
-	if ((unsigned int)(this->_hit_points) >> 31)
+	if ((unsigned int)(this->_hit_points) << 31)
 		this->_hit_points = 0;
 
 	if (!_hit_points)
@@ -107,9 +113,15 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
+	if (!_hit_points)
+	{
+		std::cout << DIM << this->_name << " is dead, can't repair." << RESET << std::endl;
+		return ;
+	}
+
 	if (!_energy_points)
 	{
-		std::cout << DIM << this->_name << " don't have any energy left." << RESET << std::endl;
+		std::cout << DIM << this->_name << " don't have any energy left to repair." << RESET << std::endl;
 		return ;
 	}
 

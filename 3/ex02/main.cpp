@@ -6,19 +6,20 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:36:54 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/14 05:27:33 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/14 06:03:24 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-	ScavTrap test1;
-	ScavTrap test2("scav");
-	ScavTrap test3("INVALID");
-	ScavTrap test4(test2);
-	ScavTrap test5("SUP3R-SV-TP");
+	FragTrap test1;
+	FragTrap test2("frag");
+	FragTrap test3("INVALID");
+	FragTrap test4(test2);
+	FragTrap test5("SUP3R-FG-TP");
 
 	test3 = test1;
 	test1.attack("test dummy");
@@ -37,15 +38,15 @@ int main()
 	}
 	test5.takeDamage(10);
 	test5.ClapTrap::attack("ClapTrap's dummy");
-	test1.guardGate();
-	test1.guardGate();
-	test2.guardGate();
-	test2.guardGate();
-	test3.guardGate();
-	test3.guardGate();
-	test4.guardGate();
-	test4.guardGate();
-	test5.guardGate();
-	test5.guardGate();
+	test1.highFivesGuys();
+	test1.highFivesGuys();
+	test2.highFivesGuys();
+	test2.highFivesGuys();
+	test3.highFivesGuys();
+	test3.highFivesGuys();
+	test4.highFivesGuys();
+	test4.highFivesGuys();
+	test5.highFivesGuys();
+	test5.highFivesGuys();
 	return 0;
 }

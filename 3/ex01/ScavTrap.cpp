@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 04:28:58 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/14 06:08:47 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/15 17:35:04 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other, PURPLE)
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << PURPLE << "ScavTrap destructor called" << RESET << std::endl;
+	std::cout << DIM << "ScavTrap destructor called" << RESET << std::endl;
 }
 
 

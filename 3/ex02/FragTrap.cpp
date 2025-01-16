@@ -6,18 +6,18 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 04:28:58 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/14 06:04:49 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/16 15:49:40 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void): ClapTrap("SC4V-TP", 100, 50, 20, BLUE)
+FragTrap::FragTrap(void): ClapTrap("SC4V-TP", 100, 100, 30, BLUE)
 {
 	std::cout << BLUE << "FragTrap default constructor called" << RESET << std::endl;
 }
 
-FragTrap::FragTrap(std::string name): ClapTrap(name, 100, 50, 20, BLUE)
+FragTrap::FragTrap(std::string name): ClapTrap(name, 100, 100, 30, BLUE)
 {
 	std::cout << BLUE << "named FragTrap constructor called" << RESET << std::endl;
 }
@@ -30,7 +30,7 @@ FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other, BLUE)
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << BLUE << "FragTrap destructor called" << RESET << std::endl;
+	std::cout << DIM << "FragTrap destructor called" << RESET << std::endl;
 }
 
 void	FragTrap::highFivesGuys(void)

@@ -6,7 +6,7 @@
 #    By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 07:21:18 by mmoussou          #+#    #+#              #
-#    Updated: 2025/01/09 17:35:52 by mmoussou         ###   ########.fr        #
+#    Updated: 2025/01/15 17:32:50 by mmoussou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,8 @@ INCLUDE = ./include
 NAME = ex01
 
 #find -type f -name "*.cpp" | sed "s/\.\///g" | xargs -Iname echo "`printf '\t\t\t'`" name "\\"
-#SRCS = 
-SRCS = $(shell find -name '*.cpp')
+SRCS = ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp
+#SRCS = $(shell find -name '*.cpp')
 
 all: $(NAME)
 

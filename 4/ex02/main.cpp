@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 13:37:14 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/17 17:11:47 by mmoussou         ###   ########.fr       */
+/*   Created: 2025/01/16 15:46:50 by mmoussou          #+#    #+#             */
+/*   Updated: 2025/01/19 07:17:59 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Cat.hpp"
+#include "Dog.hpp"
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#define ANIMALS_NUMBER 20
 
-#include <string>
-#include <iostream>
+int main(void)
+{
+	{
+		Animal *arr[ANIMALS_NUMBER];
 
-class Animal {
-public:
-	Animal(void);
-	Animal(Animal &other);
-	virtual ~Animal(void);
+		for (int i = 0; i < (ANIMALS_NUMBER / 2); i++)
+			arr[i] = new Cat();
 
-	Animal				&operator=(const Animal &other);
+		for (int i = ANIMALS_NUMBER / 2; i < ANIMALS_NUMBER; i++)
+			arr[i] = new Dog();
+		
+		for (int i = 0; i < ANIMALS_NUMBER; i++)
+			delete arr[i];
+	}
 
-	virtual void		makeSound(void) const;
-	const std::string	&getType(void) const;
-
-protected:
-	Animal(std::string args_type);
-	std::string	type;
-
-};
-
-#endif
+	return 0;
+}

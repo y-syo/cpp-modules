@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:37:14 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/17 17:11:47 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/19 07:02:25 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 
 class Animal {
 public:
-	Animal(void);
-	Animal(Animal &other);
 	virtual ~Animal(void);
 
 	Animal				&operator=(const Animal &other);
@@ -30,8 +28,11 @@ public:
 	const std::string	&getType(void) const;
 
 protected:
-	Animal(std::string args_type);
 	std::string	type;
+
+	Animal(void);
+	Animal(Animal &other);
+	Animal(std::string args_type);
 
 };
 

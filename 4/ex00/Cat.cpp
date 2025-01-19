@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 13:37:14 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/17 17:11:47 by mmoussou         ###   ########.fr       */
+/*   Created: 2025/01/17 02:28:58 by mmoussou          #+#    #+#             */
+/*   Updated: 2025/01/17 17:12:43 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Cat.hpp"
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+Cat::Cat(void): Animal("cat")
+{
+}
 
-#include <string>
-#include <iostream>
+Cat::~Cat(void)
+{
+}
 
-class Animal {
-public:
-	Animal(void);
-	Animal(Animal &other);
-	virtual ~Animal(void);
-
-	Animal				&operator=(const Animal &other);
-
-	virtual void		makeSound(void) const;
-	const std::string	&getType(void) const;
-
-protected:
-	Animal(std::string args_type);
-	std::string	type;
-
-};
-
-#endif
+void	Cat::makeSound(void) const
+{
+	std::cout << "meow meoooow :3" << std::endl;
+}

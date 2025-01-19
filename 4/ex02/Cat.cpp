@@ -1,45 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 14:15:25 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/17 17:12:18 by mmoussou         ###   ########.fr       */
+/*   Created: 2025/01/17 02:28:58 by mmoussou          #+#    #+#             */
+/*   Updated: 2025/01/19 07:00:41 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Cat.hpp"
 
-Animal::Animal(void): type("Random Animal")
+Cat::Cat(void): Animal("cat")
 {
+	this->_brain = new Brain();
 }
 
-Animal::Animal(Animal &other): type(other.type)
+Cat::~Cat(void)
 {
+	delete this->_brain;
 }
 
-Animal::Animal(std::string args_type): type(args_type)
+Cat::Cat(Cat &copy): Animal("cat")
 {
+	this->_brain = new Brain();
+	this->_brain = copy._brain;
 }
 
-Animal::~Animal(void)
+Cat	&Cat::operator=(const Cat &other)
 {
-}
-
-Animal		&Animal::operator=(const Animal &other)
-{
-	this->type = other.type;
+	this->_brain = other._brain;
 	return (*this);
 }
 
-const std::string	&Animal::getType(void) const
+void	Cat::makeSound(void) const
 {
-	return (this->type);
+	std::cout << "meow meoooow :3" << std::endl;
 }
 
-void		Animal::makeSound(void) const
+Brain	*Cat::getBrain(void) const
 {
-	std::cout << "hello i am an animal and i am making a sound" << std::endl;
+	return (this->_brain);
 }

@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 13:37:14 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/17 17:11:47 by mmoussou         ###   ########.fr       */
+/*   Created: 2025/01/17 02:28:58 by mmoussou          #+#    #+#             */
+/*   Updated: 2025/01/17 02:43:59 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Dog.hpp"
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+Dog::Dog(void): Animal("dog")
+{
+}
 
-#include <string>
-#include <iostream>
+Dog::~Dog(void)
+{
+}
 
-class Animal {
-public:
-	Animal(void);
-	Animal(Animal &other);
-	virtual ~Animal(void);
-
-	Animal				&operator=(const Animal &other);
-
-	virtual void		makeSound(void) const;
-	const std::string	&getType(void) const;
-
-protected:
-	Animal(std::string args_type);
-	std::string	type;
-
-};
-
-#endif
+void	Dog::makeSound(void) const
+{
+	std::cout << "i am a dog named daisy and i have not eaten alive a family of 4 this morning" << std::endl;
+}

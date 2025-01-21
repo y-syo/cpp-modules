@@ -6,14 +6,14 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:46:50 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/21 11:18:32 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/21 12:15:52 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-#define ANIMALS_NUMBER 2
+#define ANIMALS_NUMBER 4
 
 int main(void)
 {

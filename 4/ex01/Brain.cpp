@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 13:44:13 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/19 05:58:27 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/21 12:20:40 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 
 Brain::Brain(void)
 {
+	std::cout << "brain constructor called" << std::endl;
 }
 
 Brain::Brain(Brain &copy)
 {
+	std::cout << "brain copy constructor called" << std::endl;
 	for (int i = 0; i < MAX_IDEA; i++)
 	  this->ideas[i] = copy.ideas[i];
 }
 
 Brain::~Brain(void)
 {
+	std::cout << "brain destructor called" << std::endl;
 }
 
 Brain	&Brain::operator=(const Brain &other)

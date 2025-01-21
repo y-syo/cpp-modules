@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 02:25:16 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/17 02:39:27 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/21 12:11:44 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 class Dog: public Animal {
 public:
 	Dog(void);
+	Dog(Dog &copy);
 	~Dog(void);
 	
 	void	makeSound(void) const;

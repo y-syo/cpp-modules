@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:15:25 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/17 17:12:18 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/21 10:51:52 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,22 @@
 
 Animal::Animal(void): type("Random Animal")
 {
+	std::cout << "animal constructor called" << std::endl;
 }
 
 Animal::Animal(Animal &other): type(other.type)
 {
+	std::cout << "animal constructor called" << std::endl;
 }
 
 Animal::Animal(std::string args_type): type(args_type)
 {
+	std::cout << "animal constructor called" << std::endl;
 }
 
 Animal::~Animal(void)
 {
+	std::cout << "animal destructor called" << std::endl;
 }
 
 Animal		&Animal::operator=(const Animal &other)

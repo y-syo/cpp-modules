@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 02:28:58 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/17 12:29:46 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/21 10:52:26 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 WrongCat::WrongCat(void): WrongAnimal("cat")
 {
+	std::cout << "wrong cat constructor called" << std::endl;
 }
 
 WrongCat::~WrongCat(void)
 {
+	std::cout << "wrong cat destructor called" << std::endl;
 }
 
 void	WrongCat::makeSound(void) const

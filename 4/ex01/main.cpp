@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:46:50 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/19 07:17:32 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/21 10:47:21 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ int main(void)
 		for (int i = ANIMALS_NUMBER / 2; i < ANIMALS_NUMBER; i++)
 			arr[i] = new Dog();
 		
+
+		for (int i = 0; i < ANIMALS_NUMBER; i++)
+			arr[i]->makeSound();
+
 		for (int i = 0; i < ANIMALS_NUMBER; i++)
 			delete arr[i];
 	}

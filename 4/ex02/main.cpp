@@ -6,17 +6,22 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:46:50 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/19 07:17:59 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/21 10:50:26 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-#define ANIMALS_NUMBER 20
+#define ANIMALS_NUMBER 2
 
 int main(void)
 {
+	{
+		Animal test();
+		Animal *test2 = new Animal();
+	}
+
 	{
 		Animal *arr[ANIMALS_NUMBER];
 

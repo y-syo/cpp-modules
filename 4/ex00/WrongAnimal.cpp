@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:15:25 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/17 12:29:58 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/21 10:52:10 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 WrongAnimal::WrongAnimal(void): type("Random Animal")
 {
+	std::cout << "wrong animal constructor called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(std::string args_type): type(args_type)
 {
+	std::cout << "wrong animal constructor called" << std::endl;
 }
 
 WrongAnimal::~WrongAnimal(void)
 {
+	std::cout << "wrong animal destructor called" << std::endl;
 }
 
 WrongAnimal		&WrongAnimal::operator=(const WrongAnimal &other)

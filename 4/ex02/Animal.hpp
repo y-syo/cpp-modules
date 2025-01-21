@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:37:14 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/19 07:02:25 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:16:08 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 
 	Animal				&operator=(const Animal &other);
 
-	virtual void		makeSound(void) const;
+	virtual void		makeSound(void) const = 0;
 	const std::string	&getType(void) const;
 
 protected:

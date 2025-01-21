@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 15:46:50 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/21 10:47:21 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:13:35 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,16 @@ int main(void)
 
 		for (int i = 0; i < ANIMALS_NUMBER; i++)
 			delete arr[i];
+	}
+
+	Dog basic;
+
+	{
+
+	Dog tmp;
+
+		tmp = basic;
+
 	}
 
 	return 0;

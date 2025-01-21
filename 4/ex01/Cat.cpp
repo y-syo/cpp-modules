@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 02:28:58 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/21 10:48:15 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:14:43 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,12 @@ Cat::~Cat(void)
 Cat::Cat(Cat &copy): Animal("cat")
 {
 	std::cout << "cat copy constructor called" << std::endl;
-	this->_brain = new Brain();
-	this->_brain = copy._brain;
+	this->_brain = new Brain(*copy._brain);
 }
 
 Cat	&Cat::operator=(const Cat &other)
 {
-	this->_brain = other._brain;
+	*this->_brain = *other._brain;
 	return (*this);
 }
 

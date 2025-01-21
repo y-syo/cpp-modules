@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 13:37:14 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/17 12:31:47 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:29:37 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 class WrongAnimal {
 public:
 	WrongAnimal(void);
-	~WrongAnimal(void);
+	WrongAnimal(WrongAnimal &other);
+	virtual ~WrongAnimal(void);
 
 	WrongAnimal			&operator=(const WrongAnimal &other);
 

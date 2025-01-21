@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 02:28:58 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/21 10:51:27 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:58:24 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ Dog::~Dog(void)
 
 void	Dog::makeSound(void) const
 {
-	std::cout << "i am a dog named daisy and i have not eaten alive a family of 4 this morning" << std::endl;
+	std::cout << "dog is barking" << std::endl;
 }

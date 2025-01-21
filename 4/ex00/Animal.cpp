@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:15:25 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/21 10:51:52 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:59:04 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Animal::Animal(void): type("Random Animal")
 
 Animal::Animal(Animal &other): type(other.type)
 {
-	std::cout << "animal constructor called" << std::endl;
+	std::cout << "animal copy constructor called" << std::endl;
 }
 
 Animal::Animal(std::string args_type): type(args_type)
@@ -45,5 +45,5 @@ const std::string	&Animal::getType(void) const
 
 void		Animal::makeSound(void) const
 {
-	std::cout << "hello i am an animal and i am making a sound" << std::endl;
+	std::cout << "animal is making sound" << std::endl;
 }

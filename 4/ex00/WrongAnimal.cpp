@@ -6,7 +6,7 @@
 /*   By: mmoussou <mmoussou@student.42angouleme.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:15:25 by mmoussou          #+#    #+#             */
-/*   Updated: 2025/01/21 10:52:10 by mmoussou         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:46:24 by mmoussou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 WrongAnimal::WrongAnimal(void): type("Random Animal")
 {
 	std::cout << "wrong animal constructor called" << std::endl;
+}
+
+WrongAnimal::WrongAnimal(WrongAnimal &other): type(other.type)
+{
+	std::cout << "wrong animal copy constructor called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(std::string args_type): type(args_type)
@@ -40,5 +45,5 @@ const std::string	&WrongAnimal::getType(void) const
 
 void		WrongAnimal::makeSound(void) const
 {
-	std::cout << "hello i am an animal and i am making a sound" << std::endl;
+	std::cout << "wrong animal is making noise" << std::endl;
 }
